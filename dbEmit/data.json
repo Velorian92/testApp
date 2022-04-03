@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "imageUrl": "http://localhost:5000/images/firstPhone.jpg",
+        "name": "Frirst Phone",
+        "count": 4,
+        "size": {
+            "width": 800,
+            "height": 600
+        },
+        "weight": "200g",
+        "comments": [
+            "CommentModel",
+            "CommentModel"
+        ]
+    },
+    {
+        "id": "2",
+        "imageUrl": "http://localhost:5000/images/secondPhone.jpg",
+        "name": "Second Phone",
+        "count": 3,
+        "size": {
+            "width": 700,
+            "height": 500
+        },
+        "weight": "100g",
+        "comments": [
+            "CommentModel",
+            "CommentModel"
+        ]
+    },
+    {
+        "id": "3",
+        "imageUrl": "http://localhost:5000/images/thirdPhone.jpg",
+        "name": "Third Phone",
+        "count": 2,
+        "size": {
+            "width": 600,
+            "height": 400
+        },
+        "weight": "150g",
+        "comments": [
+            "CommentModel",
+            "CommentModel"
+        ]
+    }
+]
