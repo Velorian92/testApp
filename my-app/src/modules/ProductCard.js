@@ -12,6 +12,8 @@ export default function ProductCard(props) {
 
         text-align: center;
 
+        display: '';
+
         img{
             width: 100%;
             border: .1px solid black;
@@ -19,25 +21,39 @@ export default function ProductCard(props) {
         }
     `
 
-    let Comments = styled.span`
-        display: none;
-    `
+    let delVal, addVal;
 
-    let AddButton = styled.button`
-    
-    `
+    (function () {
+
+        if (window.location.href == 'http://localhost:3000/') {
+            delVal = 'none'
+            addVal = ''
+        }
+
+        if (window.location.href == 'http://localhost:3000/cart') {
+            delVal = ''
+            addVal = 'none'
+        }
+
+    })()
 
     let DeleteButton = styled.button`
-        /* display: none; */
+        display: ${delVal};
     `
-    
-    function addToCart () {
-        localStorage.setItem(props.name,props.identificator)
+    let Comments = styled.span`
+       display: none;
+   `
+
+    let AddButton = styled.button`
+        display: ${addVal};
+   `
+
+    function addToCart() {
+        localStorage.setItem(props.name, props.identificator)
     }
 
-    function deleteFromCart (event) {
+    function deleteFromCart() {
         localStorage.removeItem(props.name)
-        console.log(event)
     }
 
     return (
@@ -51,7 +67,7 @@ export default function ProductCard(props) {
             <p>Phone weight: {props.weight}</p>
 
             <AddButton onClick={addToCart}>Add  to cart</AddButton>
-            <DeleteButton onClick={deleteFromCart}>Delete from cart</DeleteButton>
+            <DeleteButton onClick={deleteFromCart} className='deleteButton'>Delete from cart</DeleteButton>
 
             <Comments>
                 <p>Some User</p>
